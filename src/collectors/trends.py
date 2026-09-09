@@ -10,7 +10,28 @@ from ..common.config import KEYWORDS, SETTINGS, env, keywords_for
 from ..common.storage import save_rows
 
 
+def _patch_urllib3_retry() -> None:
+    """urllib3 2.x 는 Retry(method_whitelist=) 를 제거 → pytrends 4.9.x 가 깨짐.
+    kwarg 를 allowed_methods 로 넘겨주는 얇은 shim (urllib3 1.x 면 무해)."""
+    try:
+        import urllib3.util.retry as _r
+        import inspect
+        if "method_whitelist" in inspect.signature(_r.Retry.__init__).parameters:
+            return
+        _orig = _r.Retry.__init__
+
+        def _init(self, *a, **kw):
+            if "method_whitelist" in kw:
+                kw["allowed_methods"] = kw.pop("method_whitelist")
+            _orig(self, *a, **kw)
+
+        _r.Retry.__init__ = _init
+    except Exception:
+        pass
+
+
 def _pytrends_iot(keywords: list[str], geo: str) -> list[dict]:
+    _patch_urllib3_retry()
     from pytrends.request import TrendReq
 
     py = TrendReq(hl="en-US", tz=0, retries=2, backoff_factor=0.5)
@@ -59,25 +80,33 @@ def _serpapi_iot(keywords: list[str], geo: str) -> list[dict]:
 
 
 def _rising_queries(keywords: list[str], geo: str) -> list[dict]:
-    try:
-        from pytrends.request import TrendReq
-        py = TrendReq(hl="en-US", tz=0)
-        out = []
-        for chunk in _chunks(keywords, 5):
-            py.build_payload(chunk, timeframe="today 1-m", geo=geo)
-            rq = py.related_queries()
-            for seed, d in rq.items():
-                rising = d.get("rising")
-                if rising is None:
-                    continue
-                for _, row in rising.iterrows():
-                    out.append({"seed": seed, "geo": geo,
-                                "rising_query": row["query"], "value": int(row["value"])})
-            time.sleep(1)
-        return out
-    except Exception as e:
-        print(f"[trends] rising 조회 실패: {e}")
-        return []
+    """related_queries(rising). Google 이 429 를 자주 뱉으므로 best-effort:
+    청크별로 실패해도 다음 청크 계속, 청크 사이 간격을 넉넉히."""
+    _patch_urllib3_retry()
+    from pytrends.request import TrendReq
+
+    py = TrendReq(hl="en-US", tz=0, retries=2, backoff_factor=1.0)
+    out = []
+    for chunk in _chunks(keywords, 5):
+        for attempt in range(2):
+            try:
+                py.build_payload(chunk, timeframe="today 1-m", geo=geo)
+                rq = py.related_queries()
+                for seed, d in rq.items():
+                    rising = d.get("rising")
+                    if rising is None:
+                        continue
+                    for _, row in rising.iterrows():
+                        out.append({"seed": seed, "geo": geo,
+                                    "rising_query": row["query"], "value": int(row["value"])})
+                break
+            except Exception as e:
+                if attempt == 0:
+                    time.sleep(10)
+                else:
+                    print(f"[trends] rising {geo} {chunk} 실패: {e}")
+        time.sleep(5)
+    return out
 
 
 def collect(rising: bool = False) -> list[dict]:
