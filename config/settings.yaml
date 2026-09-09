@@ -10,7 +10,7 @@ storage:
 llm:
   gemini_model: "gemini-2.5-flash"
   openai_model: "gpt-4o-mini"
-  anthropic_model: "claude-sonnet-5"
+  anthropic_model: "claude-haiku-4-5-20251001"   # 매시간 호출 비용 절감 (~$25/월)
   max_tokens: 900
   temperature: 0.3
 

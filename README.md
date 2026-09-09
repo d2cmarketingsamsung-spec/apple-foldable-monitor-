@@ -37,8 +37,20 @@ python -m src.run_daily                  # 전체 일간 파이프라인
 
 ## GitHub Actions 배포
 
-레포 Settings → Secrets 에 `.env.example` 의 키를 동일 이름으로 등록.
-워크플로는 `data/` 를 아티팩트로 업로드한다. (Sheets 미사용 시 이력 확인용)
+1. **레포를 public 으로 생성** (Actions 분(minutes) 무제한). 예:
+   ```bash
+   # GitHub에서 빈 public 레포 생성 후
+   git remote add origin https://github.com/<계정>/apple-foldable-monitor.git
+   git push -u origin main
+   ```
+   이미 private 으로 만들었다면: Settings → General → Danger Zone → Change visibility → Public
+2. Settings → Secrets and variables → Actions 에 `.env.example` 의 키를 동일 이름으로 등록
+3. 스케줄
+   - `frequent.yml` 매시간: 검색량 + LLM 3사
+   - `daily.yml` 02:00 KST(17:00 UTC): SERP + AI Overview + 뉴스
+4. 워크플로는 `data/` 를 아티팩트로 업로드 (Sheets 미사용 시 이력 확인용)
+
+> LLM 비용: `frequent` 매시간 실행 시 Anthropic 모델은 haiku 로 고정(settings.yaml). sonnet 사용 시 ~$200/월.
 
 ## 데이터셋
 
