@@ -7,18 +7,18 @@
 
 ```
 config/        keywords.yaml (§4) · prompts.yaml (§5) · settings.yaml (임계치/모델/로케일)
-src/common/    config(로더) · storage(jsonl+Sheets) · alerts(Slack)
+src/common/    config(로더) · storage(jsonl) · report(Excel 메일) · alerts(email/Slack)
 src/collectors/
   trends.py        검색량 — pytrends, 실패 시 SerpApi google_trends 폴백 + rising queries
   serp.py          SERP 순위 + AI Overview/AI Mode — SerpApi
-  llm_mentions.py  Gemini/OpenAI/Anthropic 3사 동일 프롬프트 언급·감성 집계
+  llm_mentions.py  LLM 언급·감성 — 무료(Gemini)만. openai/anthropic은 유료라 비활성
   news.py          GDELT + Google Alerts RSS (2차)
-src/run_daily.py   1차: trends + serp + llm  (+임계치 알림)
-src/run_weekly.py  rising queries 확장 + news
-.github/workflows/ daily.yml (01:00 UTC) · weekly.yml (월 02:00 UTC)
+src/run_frequent.py 매시간: trends + llm  (+임계치 알림)
+src/run_daily.py    하루 1회: serp + rising + news + Excel 리포트 메일
+.github/workflows/  frequent.yml (매시간) · daily.yml (17:00 UTC = KST 02:00)
 ```
 
-1차 우선순위: 검색량 · SERP · AI Overview · LLM 3사
+1차 우선순위: 검색량 · SERP · AI Overview · LLM 언급(Gemini)
 2차: 뉴스 · 커뮤니티 · 자사 트래픽(GSC) · 가격 감시
 
 ## 로컬 실행
@@ -45,28 +45,30 @@ python -m src.run_daily                  # 전체 일간 파이프라인
    ```
    이미 private 으로 만들었다면: Settings → General → Danger Zone → Change visibility → Public
 2. Settings → Secrets and variables → Actions 에 `.env.example` 의 키를 동일 이름으로 등록
-3. 스케줄
-   - `frequent.yml` 매시간: 검색량 + LLM 3사
-   - `daily.yml` 02:00 KST(17:00 UTC): SERP + AI Overview + 뉴스
-4. 워크플로는 `data/` 를 아티팩트로 업로드 (Sheets 미사용 시 이력 확인용)
+3. Settings → Actions → General → Workflow permissions → **Read and write** (CI가 data/ 커밋)
+4. 스케줄
+   - `frequent.yml` 매시간: 검색량 + LLM 언급(Gemini)
+   - `daily.yml` 02:00 KST(17:00 UTC): SERP + AI Overview + 뉴스 + Excel 리포트 메일
+5. CI가 `data/*.jsonl` 을 레포에 커밋해 히스토리 축적
 
-> LLM 비용: `frequent` 매시간 실행 시 Anthropic 모델은 haiku 로 고정(settings.yaml). sonnet 사용 시 ~$200/월.
+> LLM: 무료 Gemini만 사용. OpenAI·Anthropic은 유료라 제외(`config/settings.yaml` `llm.providers`).
+> ChatGPT/Claude 응답 모니터링이 필요해지면 유료 키 발급 후 providers 에 추가.
 
 ## 데이터셋
 
 | dataset | 주기 | 핵심 필드 |
 |---|---|---|
-| trends | 일 | keyword, country, value_last, wow_pct, source |
-| trends_rising | 주 | seed, rising_query, value |
+| trends | 매시간 | keyword, country, value_last, wow_pct, source |
+| trends_rising | 일 | seed, rising_query, value |
 | serp | 일 | keyword, apple_rank, samsung_rank, ai_overview_present, ai_overview_mentions_* |
-| llm_mentions | 일 | provider, prompt_id, lang, apple_first, samsung_sentiment |
-| news_volume / news_articles | 주 | query, gdelt_volume_* / title, link |
+| llm_mentions | 매시간 | provider, prompt_id, lang, apple_first, samsung_sentiment |
+| news_volume / news_articles | 일 | query, gdelt_volume_* / title, link |
+
+리포트: daily 실행이 위 전체를 시트별로 나눈 `.xlsx` 를 `REPORT_EMAIL_TO` 로 발송.
 
 ## 미결 (핸드오프 §9) — 사용자 확인 필요
 
-- Anthropic API 키 신규 발급 여부
-- 저장소: Google Sheets vs BigQuery
-- 알림 채널: Slack vs 이메일
+- ChatGPT/Claude 언급 모니터링: 무료 API 없음 → 현재 제외 (Gemini만)
 - GA4 접근권한 (현재 GSC로 자사 트래픽 대체)
 - 나머지 8개 법인 2차 추가 여부
 

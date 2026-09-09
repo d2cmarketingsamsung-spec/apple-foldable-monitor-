@@ -39,7 +39,8 @@ def _anthropic(prompt: str) -> str:
     return "".join(b.text for b in r.content if b.type == "text")
 
 
-PROVIDERS = {"gemini": _gemini, "openai": _openai, "anthropic": _anthropic}
+_ALL_PROVIDERS = {"gemini": _gemini, "openai": _openai, "anthropic": _anthropic}
+PROVIDERS = {k: _ALL_PROVIDERS[k] for k in L.get("providers", ["gemini"])}
 
 
 def _analyze(text: str) -> dict:
