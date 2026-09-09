@@ -16,7 +16,7 @@ llm:
   # 무료만 사용. openai(gpt-4o-mini)·anthropic(claude)은 유료라 제외.
   # 나중에 예산 생기면 providers 에 "openai","anthropic" 추가하면 코드 그대로 동작.
   providers: ["gemini"]
-  gemini_model: "gemini-2.5-flash"
+  gemini_model: "gemini-3.6-flash"   # 2.5-flash 는 신규 사용자 사용 불가(404)
   openai_model: "gpt-4o-mini"
   anthropic_model: "claude-haiku-4-5-20251001"
   max_tokens: 900

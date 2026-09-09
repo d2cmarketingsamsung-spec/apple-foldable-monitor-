@@ -17,8 +17,18 @@ POS = ["impressive", "best", "worth it", "durable", "innovative",
 def _gemini(prompt: str) -> str:
     import google.generativeai as genai
     genai.configure(api_key=env("GEMINI_API_KEY"))
-    m = genai.GenerativeModel(L["gemini_model"])
-    return m.generate_content(prompt).text or ""
+    # 설정 모델 우선, 404(모델 폐지) 시 후보군 순차 시도
+    candidates = [L["gemini_model"], "gemini-3.6-flash", "gemini-flash-latest",
+                  "gemini-2.0-flash"]
+    last = None
+    for name in dict.fromkeys(candidates):
+        try:
+            return genai.GenerativeModel(name).generate_content(prompt).text or ""
+        except Exception as e:
+            last = e
+            if "404" not in str(e):
+                raise
+    raise last
 
 
 def _openai(prompt: str) -> str:
