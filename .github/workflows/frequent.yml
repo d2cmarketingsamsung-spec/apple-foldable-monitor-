@@ -1,7 +1,7 @@
-name: weekly-monitor
+name: frequent-monitor
 on:
   schedule:
-    - cron: "0 2 * * 1"   # 매주 월요일 02:00 UTC
+    - cron: "0 * * * *"   # 매시 정각 (KST 02:00부터 매시간). GitHub cron은 UTC지만 매시간이라 무관
   workflow_dispatch:
 
 jobs:
@@ -14,14 +14,17 @@ jobs:
           python-version: "3.12"
           cache: pip
       - run: pip install -r requirements.txt
-      - run: python -m src.run_weekly
+      - run: python -m src.run_frequent
         env:
           SERPAPI_KEY: ${{ secrets.SERPAPI_KEY }}
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+          OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
           GOOGLE_SHEETS_ID: ${{ secrets.GOOGLE_SHEETS_ID }}
           GOOGLE_SERVICE_ACCOUNT_JSON: ${{ secrets.GOOGLE_SERVICE_ACCOUNT_JSON }}
-          GOOGLE_ALERTS_FEEDS: ${{ secrets.GOOGLE_ALERTS_FEEDS }}
+          SLACK_WEBHOOK_URL: ${{ secrets.SLACK_WEBHOOK_URL }}
       - uses: actions/upload-artifact@v4
         with:
-          name: data-weekly-${{ github.run_id }}
+          name: data-${{ github.run_id }}
           path: data/
-          retention-days: 30
+          retention-days: 7

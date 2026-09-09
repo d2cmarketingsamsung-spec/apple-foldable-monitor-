@@ -48,8 +48,9 @@ def collect() -> list[dict]:
     rows = []
     for country in KEYWORDS["countries"]:
         loc = loc_map[country]
-        # 쿼터 절약: 핵심 카테고리만
-        for kw in keywords_for(country, ["product", "versus"]):
+        # 쿼터 절약: product 1개 + versus 1개만 (국가당 2회)
+        picks = keywords_for(country, ["product"])[:1] + keywords_for(country, ["versus"])[:1]
+        for kw in picks:
             page = _search(kw["keyword"], loc)
             organic = page.get("organic_results", []) or []
             top10 = organic[:10]
