@@ -25,26 +25,44 @@ def _read_jsonl(path: Path) -> list[dict]:
 
 def build_workbook() -> bytes:
     from openpyxl import Workbook
+    from openpyxl.styles import Font, Alignment
+    from . import interpret
 
     wb = Workbook()
     wb.remove(wb.active)
-    datasets = sorted(DATA_DIR.glob("*.jsonl"))
+    paths = [p for p in sorted(DATA_DIR.glob("*.jsonl")) if not p.stem.startswith("_")]
+    data = {p.stem: _read_jsonl(p) for p in paths}
 
+    # 1) 해석 시트 (맨 앞)
+    hs = wb.create_sheet("해석")
+    for r in interpret.build_rows(data):
+        hs.append(r)
+    for row in hs.iter_rows():
+        if row[0].value in ("구분", "종합") or str(row[0].value).startswith("※"):
+            for c in row:
+                c.font = Font(bold=True)
+    widths = {"A": 16, "B": 30, "C": 26, "D": 60, "E": 8}
+    for col, w in widths.items():
+        hs.column_dimensions[col].width = w
+    for row in hs.iter_rows():
+        for c in row:
+            c.alignment = Alignment(vertical="top", wrap_text=True)
+
+    # 2) summary 시트
     summary = wb.create_sheet("summary")
     summary.append(["dataset", "총 행수", "마지막 수집(UTC)"])
 
-    for path in datasets:
-        rows = _read_jsonl(path)
+    # 3) 데이터셋별 원본 시트
+    for name, rows in data.items():
         if not rows:
             continue
-        name = path.stem[:31]
-        ws = wb.create_sheet(name)
+        ws = wb.create_sheet(name[:31])
         header = list(dict.fromkeys(k for r in rows for k in r))
         ws.append(header)
         for r in rows:
             ws.append([_cell(r.get(h, "")) for h in header])
-        last = max((r.get("_ingested_at", "") for r in rows), default="")
-        summary.append([name, len(rows), last])
+        summary.append([name, len(rows),
+                        max((r.get("_ingested_at", "") for r in rows), default="")])
 
     buf = io.BytesIO()
     wb.save(buf)
