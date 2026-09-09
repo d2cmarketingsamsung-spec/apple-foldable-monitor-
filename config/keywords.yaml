@@ -1,0 +1,49 @@
+# 애플 폴더블 아이폰 모니터링 - 키워드 세트 (핸드오프 문서 §4)
+# 프레임: ①제품명 ②카테고리 ③경쟁비교 ④구매의도/가격 + 베이스라인
+# rising 검증: 매주 pytrends related_queries(rising)로 seed 확장 (§7)
+
+countries: [US, KR, GB, IN]
+
+# 국가별 Google Trends geo 코드
+geo:
+  US: US
+  KR: KR
+  GB: GB
+  IN: IN
+
+# LLM/SERP 언어
+lang:
+  US: en
+  GB: en
+  IN: en
+  KR: ko
+
+sets:
+  US:
+    product:      ["iPhone Fold", "iPhone Ultra", "iPhone 18 Fold"]
+    category:     ["foldable iPhone"]
+    versus:       ["iPhone Fold vs Galaxy Fold", "iPhone Fold vs Galaxy Z Fold"]
+    purchase:     ["iPhone Fold price", "iPhone Fold preorder"]
+    baseline:     ["iPhone 18 Pro", "iPhone 18 Pro Max"]
+  KR:
+    product:      ["아이폰 폴드", "아이폰 언트라", "아이폰 울트라"]
+    category:     ["폴더블 아이폰"]
+    versus:       ["아이폰 폴드 갤럭시 Z폴드 비교", "아이폰 폴드 갤럭시 폴드"]
+    purchase:     ["아이폰 폴드 가격", "아이폰 폴드 사전예약"]
+    baseline:     ["아이폰 18 프로", "아이폰 18 프로맥스"]
+  GB:
+    product:      ["iPhone Fold", "iPhone Ultra"]
+    category:     ["foldable iPhone"]
+    versus:       ["iPhone Fold vs Galaxy Fold"]
+    purchase:     ["iPhone Fold price", "iPhone Fold preorder"]
+    baseline:     ["iPhone 18 Pro", "iPhone 18 Pro Max"]
+  IN:
+    product:      ["iPhone Fold", "iPhone Ultra"]
+    category:     ["foldable iPhone"]
+    versus:       ["iPhone Fold vs Galaxy Fold"]
+    purchase:     ["iPhone Fold price India"]
+    baseline:     ["iPhone 18 Pro", "iPhone 18 Pro Max"]
+
+# 심층 분석(4카테고리 전부)은 product/category/versus/purchase에만 적용,
+# baseline은 검색량만 가볍게 추적 (§3)
+deep_analysis_categories: [product, category, versus, purchase]

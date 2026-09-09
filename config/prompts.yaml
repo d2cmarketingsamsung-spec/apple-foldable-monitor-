@@ -1,0 +1,27 @@
+# LLM 언급 모니터링 프롬프트 (핸드오프 문서 §5)
+# 3사 동일 세트 매일 자동 호출: Gemini / OpenAI / Anthropic
+# Perplexity는 1단계 제외
+
+types:
+  - id: neutral_info
+    label: 중립 정보
+    en: "Tell me about Apple's foldable iPhone"
+    ko: "애플 폴더블 아이폰에 대해 알려줘"
+  - id: versus
+    label: 비교형(핵심)
+    en: "Which is better, iPhone Fold or Galaxy Z Fold?"
+    ko: "아이폰 폴드와 갤럭시 Z폴드 중 뭐가 더 나아?"
+  - id: price_value
+    label: 가격/가치 비교
+    en: "Is the iPhone Fold worth its price compared to Galaxy Fold?"
+    ko: "아이폰 폴드 가격이 갤럭시 폴드 대비 값어치 있어?"
+  - id: durability
+    label: 신뢰도/내구성
+    en: "How durable is Apple's first foldable phone?"
+    ko: "애플 첫 폴더블폰 내구성 어때?"
+
+# 응답에서 집계할 브랜드/엔티티 (언급 여부·감성·순서)
+entities:
+  apple:   ["iPhone Fold", "iPhone Ultra", "Apple foldable", "아이폰 폴드", "애플 폴더블"]
+  samsung: ["Galaxy Z Fold", "Galaxy Fold", "Samsung", "갤럭시 Z폴드", "갤럭시 폴드", "삼성"]
+  others:  ["Pixel Fold", "Honor Magic V", "OnePlus Open"]

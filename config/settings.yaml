@@ -1,0 +1,30 @@
+# 실행/저장/알림 공통 설정
+
+release_date: "2026-09-09"   # 애플 폴더블 아이폰 발표일
+
+storage:
+  # local: data/*.jsonl 항상 기록. sheets: GOOGLE_SHEETS_ID 설정 시 추가 기록
+  local_dir: data
+  google_sheets_id: ""        # 미설정 시 로컬만 사용
+
+llm:
+  gemini_model: "gemini-2.5-flash"
+  openai_model: "gpt-4o-mini"
+  anthropic_model: "claude-sonnet-5"
+  max_tokens: 900
+  temperature: 0.3
+
+serp:
+  engine_locale:
+    US: {gl: us, hl: en, google_domain: google.com}
+    GB: {gl: uk, hl: en, google_domain: google.co.uk}
+    IN: {gl: in, hl: en, google_domain: google.co.in}
+    KR: {gl: kr, hl: ko, google_domain: google.co.kr}
+
+# 임계치 초과 시 알림 (§7). WoW = 전주 대비 변화율
+alerts:
+  trends_wow_spike_pct: 40        # 검색량 급증
+  trends_wow_drop_pct: -30        # 급감
+  llm_samsung_negative_ratio: 0.5 # 삼성 부정 언급 비중
+  serp_ai_overview_appeared: true # AI Overview 신규 등장 시
+  channel: "slack"                # slack | email
