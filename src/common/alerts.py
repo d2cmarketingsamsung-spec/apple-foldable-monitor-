@@ -1,12 +1,13 @@
-"""임계치 초과 알림 (핸드오프 §7). Slack Webhook / 이메일(stub)."""
+"""임계치 초과 알림 (핸드오프 §7). Slack Webhook 또는 이메일."""
 from __future__ import annotations
-import json, requests
+import requests
 from .config import env, SETTINGS
 
 
 def notify(title: str, lines: list[str]) -> None:
-    text = f"*{title}*\n" + "\n".join(f"• {l}" for l in lines)
-    channel = SETTINGS["alerts"].get("channel", "slack")
+    text = f"{title}\n" + "\n".join(f"• {l}" for l in lines)
+    channel = SETTINGS["alerts"].get("channel", "email")
+
     if channel == "slack" and env("SLACK_WEBHOOK_URL"):
         try:
             requests.post(env("SLACK_WEBHOOK_URL"), json={"text": text}, timeout=15)
@@ -14,6 +15,15 @@ def notify(title: str, lines: list[str]) -> None:
             return
         except Exception as e:
             print(f"[alerts] slack 실패: {e}")
+
+    if channel == "email" and env("REPORT_EMAIL_TO") and env("SMTP_USER"):
+        try:
+            from .report import email_report
+            email_report(subject=f"[알림] {title}", body=text)  # 현재 워크북 첨부
+            return
+        except Exception as e:
+            print(f"[alerts] email 실패: {e}")
+
     print("[alerts] (미전송) " + text.replace("\n", " | "))
 
 

@@ -1,6 +1,5 @@
 .env
-data/
 __pycache__/
 *.pyc
 .venv/
-service_account*.json
+# data/*.jsonl 은 CI가 커밋해 히스토리로 축적 (비민감 시장 모니터링 데이터)

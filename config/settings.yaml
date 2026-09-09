@@ -3,9 +3,12 @@
 release_date: "2026-09-09"   # 애플 폴더블 아이폰 발표일
 
 storage:
-  # local: data/*.jsonl 항상 기록. sheets: GOOGLE_SHEETS_ID 설정 시 추가 기록
+  # 수집은 data/*.jsonl 에 append. 리포트는 이 파일들을 Excel 워크북으로 묶어 메일 발송.
   local_dir: data
-  google_sheets_id: ""        # 미설정 시 로컬만 사용
+
+report:
+  # daily 실행 끝에 Excel 첨부 메일 발송. 수신자/SMTP 는 .env (REPORT_EMAIL_TO 등)
+  email_on_daily: true
 
 llm:
   gemini_model: "gemini-2.5-flash"
@@ -27,4 +30,4 @@ alerts:
   trends_wow_drop_pct: -30        # 급감
   llm_samsung_negative_ratio: 0.5 # 삼성 부정 언급 비중
   serp_ai_overview_appeared: true # AI Overview 신규 등장 시
-  channel: "slack"                # slack | email
+  channel: "email"                # email | slack

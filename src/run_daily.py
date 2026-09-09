@@ -7,6 +7,8 @@
 from __future__ import annotations
 import traceback
 from .collectors import trends, serp, news
+from .common import report
+from .common.config import SETTINGS
 
 
 def _run(name, fn):
@@ -20,6 +22,8 @@ def main():
     _run("serp", serp.collect)
     _run("trends_rising", lambda: trends.collect(rising=True))
     _run("news", news.collect)
+    if SETTINGS.get("report", {}).get("email_on_daily"):
+        _run("email_report", report.email_report)
 
 
 if __name__ == "__main__":
