@@ -7,8 +7,10 @@ storage:
   local_dir: data
 
 report:
-  # daily 실행 끝에 Excel 첨부 메일 발송. 수신자/SMTP 는 .env (REPORT_EMAIL_TO 등)
-  email_on_daily: true
+  # heavy 워크플로는 매시간 돌지만 Excel 리포트 메일은 하루 1회만 (지정 UTC 시각의 실행에서).
+  # 17 UTC = KST 02:00. 매시간 리포트를 원하면 email_every_run: true.
+  email_hour_utc: 17
+  email_every_run: false
 
 llm:
   # 무료만 사용. openai(gpt-4o-mini)·anthropic(claude)은 유료라 제외.
@@ -21,6 +23,9 @@ llm:
   temperature: 0.3
 
 serp:
+  # SerpApi 무료 250회/월. 매시간 실행이면 하루 안에 소진되므로 예산 가드로 자동 중단.
+  # (검색 1건 + AI Overview 후속 1건 ≈ 국가당 3~4콜/실행)
+  monthly_call_budget: 230
   engine_locale:
     US: {gl: us, hl: en, google_domain: google.com}
     GB: {gl: uk, hl: en, google_domain: google.co.uk}

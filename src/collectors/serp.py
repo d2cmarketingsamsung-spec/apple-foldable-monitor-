@@ -3,32 +3,32 @@
 SerpApi Google Search API. 무료 250회/월 쿼터 → 국가×핵심 카테고리로 제한.
 """
 from __future__ import annotations
-import time, requests
-from ..common.config import KEYWORDS, SETTINGS, env, keywords_for
+import time
+from ..common.config import KEYWORDS, SETTINGS, keywords_for
 from ..common.storage import save_rows
+from ..common.serpapi import get as serpapi_get, QuotaExceeded
 
 APPLE_DOMAINS = ("apple.com",)
 SAMSUNG_DOMAINS = ("samsung.com",)
 
 
 def _search(query: str, loc: dict) -> dict:
-    r = requests.get("https://serpapi.com/search", params={
+    return serpapi_get({
         "engine": "google", "q": query,
         "gl": loc["gl"], "hl": loc["hl"], "google_domain": loc["google_domain"],
-        "api_key": env("SERPAPI_KEY"),
-    }, timeout=40)
-    return r.json()
+    })
 
 
 def _ai_overview(page: dict, loc: dict) -> dict:
     """AI Overview 블록. page_token 이 오면 전용 엔드포인트로 재조회."""
     ai = page.get("ai_overview")
     if ai and "page_token" in ai:
-        r = requests.get("https://serpapi.com/search", params={
-            "engine": "google_ai_overview", "page_token": ai["page_token"],
-            "api_key": env("SERPAPI_KEY"),
-        }, timeout=40)
-        ai = r.json().get("ai_overview", ai)
+        try:
+            ai = serpapi_get({
+                "engine": "google_ai_overview", "page_token": ai["page_token"],
+            }).get("ai_overview", ai)
+        except QuotaExceeded:
+            pass  # 예산 소진 시 1차 페이지의 요약만 사용
     if not ai:
         return {"ai_overview_present": False}
     text = " ".join(b.get("snippet", "") for b in ai.get("text_blocks", []))
@@ -51,7 +51,12 @@ def collect() -> list[dict]:
         # 쿼터 절약: product 1개 + versus 1개만 (국가당 2회)
         picks = keywords_for(country, ["product"])[:1] + keywords_for(country, ["versus"])[:1]
         for kw in picks:
-            page = _search(kw["keyword"], loc)
+            try:
+                page = _search(kw["keyword"], loc)
+            except QuotaExceeded as e:
+                print(f"[serp] {e}")
+                save_rows("serp", rows)
+                return rows
             organic = page.get("organic_results", []) or []
             top10 = organic[:10]
             row = {

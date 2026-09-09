@@ -6,7 +6,6 @@
 """
 from __future__ import annotations
 import time
-import requests
 from ..common.config import KEYWORDS, SETTINGS, env, keywords_for
 from ..common.storage import save_rows
 
@@ -36,16 +35,19 @@ def _pytrends_iot(keywords: list[str], geo: str) -> list[dict]:
 
 
 def _serpapi_iot(keywords: list[str], geo: str) -> list[dict]:
-    key = env("SERPAPI_KEY")
-    if not key:
+    from ..common.serpapi import get as serpapi_get, QuotaExceeded, remaining
+
+    if not env("SERPAPI_KEY"):
         return []
+    # 폴백은 SERP 수집용 예산을 침범하지 않도록 소량만 (핵심 키워드 우선)
+    budget = min(len(keywords), max(0, remaining() - 40), 6)
     out = []
-    for kw in keywords:
-        r = requests.get("https://serpapi.com/search", params={
-            "engine": "google_trends", "q": kw, "geo": geo,
-            "date": "today 3-m", "api_key": key,
-        }, timeout=40)
-        data = r.json().get("interest_over_time", {}).get("timeline_data", [])
+    for kw in keywords[:budget]:
+        try:
+            r = serpapi_get({"engine": "google_trends", "q": kw, "geo": geo, "date": "today 3-m"})
+        except QuotaExceeded:
+            break
+        data = r.get("interest_over_time", {}).get("timeline_data", [])
         vals = [int(p["values"][0].get("extracted_value", 0)) for p in data]
         last, prev = _weekly_last_prev(vals)
         out.append({
