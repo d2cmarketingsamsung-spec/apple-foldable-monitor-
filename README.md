@@ -14,8 +14,8 @@ src/collectors/
   llm_mentions.py  LLM 언급·감성 — 무료(Gemini)만. openai/anthropic은 유료라 비활성
   news.py          GDELT + Google Alerts RSS (2차)
 src/run_frequent.py 매시간: trends + llm  (+임계치 알림)
-src/run_daily.py    하루 1회: serp + rising + news + Excel 리포트 메일
-.github/workflows/  frequent.yml (매시간) · daily.yml (17:00 UTC = KST 02:00)
+src/run_daily.py    매시간: serp(예산 가드) + rising + news + Excel 리포트(하루 1회)
+.github/workflows/  frequent.yml · heavy.yml — 둘 다 매시간 (cron 0 * * * *)
 ```
 
 1차 우선순위: 검색량 · SERP · AI Overview · LLM 언급(Gemini)
@@ -48,7 +48,8 @@ python -m src.run_daily                  # 전체 일간 파이프라인
 3. Settings → Actions → General → Workflow permissions → **Read and write** (CI가 data/ 커밋)
 4. 스케줄
    - `frequent.yml` 매시간: 검색량 + LLM 언급(Gemini)
-   - `daily.yml` 02:00 KST(17:00 UTC): SERP + AI Overview + 뉴스 + Excel 리포트 메일
+   - `heavy.yml` 매시간: SERP + AI Overview + 뉴스. SerpApi는 `monthly_call_budget`(230)
+     초과 시 자동 중단. Excel 리포트 메일은 `email_hour_utc`(17=KST 02:00) 실행에서만 1회
 5. CI가 `data/*.jsonl` 을 레포에 커밋해 히스토리 축적
 
 > LLM: 무료 Gemini만 사용. OpenAI·Anthropic은 유료라 제외(`config/settings.yaml` `llm.providers`).
