@@ -64,3 +64,6 @@
 {"_ingested_at": "2026-09-10T12:09:08.498786+00:00", "query": "\"iPhone Fold\"", "gdelt_points": 0, "gdelt_volume_last": 0, "gdelt_volume_avg": 0}
 {"_ingested_at": "2026-09-10T12:09:08.498807+00:00", "query": "\"iPhone Ultra\" Apple foldable", "gdelt_points": 0, "gdelt_volume_last": 0, "gdelt_volume_avg": 0}
 {"_ingested_at": "2026-09-10T12:09:08.498810+00:00", "query": "\"foldable iPhone\"", "gdelt_points": 0, "gdelt_volume_last": 0, "gdelt_volume_avg": 0}
+{"_ingested_at": "2026-09-10T13:08:02.038504+00:00", "query": "\"iPhone Fold\"", "gdelt_points": 0, "gdelt_volume_last": 0, "gdelt_volume_avg": 0}
+{"_ingested_at": "2026-09-10T13:08:02.038524+00:00", "query": "\"iPhone Ultra\" Apple foldable", "gdelt_points": 0, "gdelt_volume_last": 0, "gdelt_volume_avg": 0}
+{"_ingested_at": "2026-09-10T13:08:02.038528+00:00", "query": "\"foldable iPhone\"", "gdelt_points": 152, "gdelt_volume_last": 0.0937, "gdelt_volume_avg": 0.0619}
