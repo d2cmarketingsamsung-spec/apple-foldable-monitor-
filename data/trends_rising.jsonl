@@ -1356,3 +1356,78 @@
 {"_ingested_at": "2026-09-10T05:05:32.458623+00:00", "seed": "iPhone 18 Pro Max", "geo": "IN", "rising_query": "iphone 17 pro max", "value": 90, "country": "IN"}
 {"_ingested_at": "2026-09-10T05:05:32.458626+00:00", "seed": "iPhone 18 Pro Max", "geo": "IN", "rising_query": "iphone 17 pro", "value": 80, "country": "IN"}
 {"_ingested_at": "2026-09-10T05:05:32.458629+00:00", "seed": "iPhone 18 Pro Max", "geo": "IN", "rising_query": "iphone 15 pro max", "value": 40, "country": "IN"}
+{"_ingested_at": "2026-09-10T06:07:40.220202+00:00", "seed": "iPhone Fold", "geo": "US", "rising_query": "xiaomi 18 fold", "value": 180, "country": "US"}
+{"_ingested_at": "2026-09-10T06:07:40.220233+00:00", "seed": "iPhone Fold", "geo": "US", "rising_query": "apple foldable phone", "value": 70, "country": "US"}
+{"_ingested_at": "2026-09-10T06:07:40.220235+00:00", "seed": "iPhone Ultra", "geo": "US", "rising_query": "apple pencil iphone ultra testing", "value": 10550, "country": "US"}
+{"_ingested_at": "2026-09-10T06:07:40.220238+00:00", "seed": "iPhone Ultra", "geo": "US", "rising_query": "iphone duo", "value": 2050, "country": "US"}
+{"_ingested_at": "2026-09-10T06:07:40.220240+00:00", "seed": "iPhone Ultra", "geo": "US", "rising_query": "apple iphone ultra expected cost", "value": 1750, "country": "US"}
+{"_ingested_at": "2026-09-10T06:07:40.220242+00:00", "seed": "iPhone Ultra", "geo": "US", "rising_query": "apple foldable iphone ultra leak", "value": 350, "country": "US"}
+{"_ingested_at": "2026-09-10T06:07:40.220244+00:00", "seed": "iPhone Ultra", "geo": "US", "rising_query": "apple event", "value": 350, "country": "US"}
+{"_ingested_at": "2026-09-10T06:07:40.220245+00:00", "seed": "iPhone Ultra", "geo": "US", "rising_query": "iphone ultra leak", "value": 170, "country": "US"}
+{"_ingested_at": "2026-09-10T06:07:40.220247+00:00", "seed": "iPhone Ultra", "geo": "US", "rising_query": "iphone 18 ultra", "value": 70, "country": "US"}
+{"_ingested_at": "2026-09-10T06:07:40.220249+00:00", "seed": "iPhone Ultra", "geo": "US", "rising_query": "iphone 18", "value": 60, "country": "US"}
+{"_ingested_at": "2026-09-10T06:07:40.220251+00:00", "seed": "iPhone Ultra", "geo": "US", "rising_query": "iphone 18 pro", "value": 50, "country": "US"}
+{"_ingested_at": "2026-09-10T06:07:40.220252+00:00", "seed": "iPhone Ultra", "geo": "US", "rising_query": "apple iphone 18 ultra", "value": 50, "country": "US"}
+{"_ingested_at": "2026-09-10T06:07:40.220254+00:00", "seed": "iPhone Ultra", "geo": "US", "rising_query": "iphone 18 pro max", "value": 50, "country": "US"}
+{"_ingested_at": "2026-09-10T06:07:40.220256+00:00", "seed": "iPhone Ultra", "geo": "US", "rising_query": "apple iphone 18", "value": 50, "country": "US"}
+{"_ingested_at": "2026-09-10T06:07:40.220258+00:00", "seed": "foldable iPhone", "geo": "US", "rising_query": "trump games", "value": 14850, "country": "US"}
+{"_ingested_at": "2026-09-10T06:07:40.220259+00:00", "seed": "foldable iPhone", "geo": "US", "rising_query": "apple foldable iphone ultra leak", "value": 200, "country": "US"}
+{"_ingested_at": "2026-09-10T06:08:00.318485+00:00", "seed": "아이폰 폴드", "geo": "KR", "rising_query": "아이폰 듀오", "value": 1202200, "country": "KR"}
+{"_ingested_at": "2026-09-10T06:08:00.318537+00:00", "seed": "아이폰 울트라", "geo": "KR", "rising_query": "아이폰 듀오", "value": 514100, "country": "KR"}
+{"_ingested_at": "2026-09-10T06:08:00.318540+00:00", "seed": "아이폰 폴드 가격", "geo": "KR", "rising_query": "아이폰 듀오", "value": 2633350, "country": "KR"}
+{"_ingested_at": "2026-09-10T06:08:00.318542+00:00", "seed": "아이폰 18 프로", "geo": "KR", "rising_query": "아이폰 듀오", "value": 286650, "country": "KR"}
+{"_ingested_at": "2026-09-10T06:08:00.318544+00:00", "seed": "아이폰 18 프로", "geo": "KR", "rising_query": "아이폰 18 프로 맥스 무게", "value": 142850, "country": "KR"}
+{"_ingested_at": "2026-09-10T06:08:21.020162+00:00", "seed": "iPhone Fold", "geo": "GB", "rising_query": "xiaomi 18 fold", "value": 29850, "country": "GB"}
+{"_ingested_at": "2026-09-10T06:08:21.020188+00:00", "seed": "iPhone Fold", "geo": "GB", "rising_query": "apple iphone 18 pro max", "value": 70, "country": "GB"}
+{"_ingested_at": "2026-09-10T06:08:21.020191+00:00", "seed": "iPhone Fold", "geo": "GB", "rising_query": "apple iphone 18 fold", "value": 40, "country": "GB"}
+{"_ingested_at": "2026-09-10T06:08:21.020192+00:00", "seed": "iPhone Ultra", "geo": "GB", "rising_query": "iphone duo", "value": 250, "country": "GB"}
+{"_ingested_at": "2026-09-10T06:08:21.020194+00:00", "seed": "iPhone Ultra", "geo": "GB", "rising_query": "apple iphone 18 pro", "value": 150, "country": "GB"}
+{"_ingested_at": "2026-09-10T06:08:21.020196+00:00", "seed": "iPhone Ultra", "geo": "GB", "rising_query": "apple event", "value": 90, "country": "GB"}
+{"_ingested_at": "2026-09-10T06:08:21.020197+00:00", "seed": "iPhone Ultra", "geo": "GB", "rising_query": "apple iphone 18", "value": 90, "country": "GB"}
+{"_ingested_at": "2026-09-10T06:08:21.020199+00:00", "seed": "iPhone Ultra", "geo": "GB", "rising_query": "apple iphone 18 ultra", "value": 70, "country": "GB"}
+{"_ingested_at": "2026-09-10T06:08:21.020200+00:00", "seed": "iPhone Ultra", "geo": "GB", "rising_query": "iphone 18 pro", "value": 70, "country": "GB"}
+{"_ingested_at": "2026-09-10T06:08:21.020202+00:00", "seed": "iPhone Ultra", "geo": "GB", "rising_query": "iphone 18 pro max", "value": 60, "country": "GB"}
+{"_ingested_at": "2026-09-10T06:08:21.020204+00:00", "seed": "iPhone Ultra", "geo": "GB", "rising_query": "iphone 18", "value": 60, "country": "GB"}
+{"_ingested_at": "2026-09-10T06:08:21.020205+00:00", "seed": "iPhone Ultra", "geo": "GB", "rising_query": "iphone 18 ultra", "value": 60, "country": "GB"}
+{"_ingested_at": "2026-09-10T06:08:21.020207+00:00", "seed": "foldable iPhone", "geo": "GB", "rising_query": "when is the new iphone coming out", "value": 16400, "country": "GB"}
+{"_ingested_at": "2026-09-10T06:08:21.020208+00:00", "seed": "foldable iPhone", "geo": "GB", "rising_query": "iphone 18 pro max", "value": 100, "country": "GB"}
+{"_ingested_at": "2026-09-10T06:08:21.020210+00:00", "seed": "foldable iPhone", "geo": "GB", "rising_query": "iphone 18 pro foldable", "value": 90, "country": "GB"}
+{"_ingested_at": "2026-09-10T06:08:21.020211+00:00", "seed": "foldable iPhone", "geo": "GB", "rising_query": "iphone 18 pro max foldable", "value": 80, "country": "GB"}
+{"_ingested_at": "2026-09-10T06:08:21.020213+00:00", "seed": "foldable iPhone", "geo": "GB", "rising_query": "iphone 18 pro", "value": 60, "country": "GB"}
+{"_ingested_at": "2026-09-10T06:08:21.020214+00:00", "seed": "foldable iPhone", "geo": "GB", "rising_query": "apple iphone 18", "value": 50, "country": "GB"}
+{"_ingested_at": "2026-09-10T06:08:21.020216+00:00", "seed": "iPhone 18 Pro", "geo": "GB", "rising_query": "iphone 18 duo", "value": 1200, "country": "GB"}
+{"_ingested_at": "2026-09-10T06:08:21.020217+00:00", "seed": "iPhone 18 Pro", "geo": "GB", "rising_query": "iphone duo", "value": 500, "country": "GB"}
+{"_ingested_at": "2026-09-10T06:08:21.020218+00:00", "seed": "iPhone 18 Pro", "geo": "GB", "rising_query": "apple watch ultra 4", "value": 130, "country": "GB"}
+{"_ingested_at": "2026-09-10T06:08:21.020220+00:00", "seed": "iPhone 18 Pro", "geo": "GB", "rising_query": "iphone 18 pro max uk", "value": 40, "country": "GB"}
+{"_ingested_at": "2026-09-10T06:08:40.627543+00:00", "seed": "iPhone Fold", "geo": "IN", "rising_query": "iphone 18 fold price in india", "value": 200, "country": "IN"}
+{"_ingested_at": "2026-09-10T06:08:40.627576+00:00", "seed": "iPhone Fold", "geo": "IN", "rising_query": "iphone 18", "value": 90, "country": "IN"}
+{"_ingested_at": "2026-09-10T06:08:40.627578+00:00", "seed": "iPhone Fold", "geo": "IN", "rising_query": "18 fold iphone", "value": 90, "country": "IN"}
+{"_ingested_at": "2026-09-10T06:08:40.627580+00:00", "seed": "iPhone Fold", "geo": "IN", "rising_query": "apple iphone 18", "value": 80, "country": "IN"}
+{"_ingested_at": "2026-09-10T06:08:40.627582+00:00", "seed": "iPhone Fold", "geo": "IN", "rising_query": "apple iphone 18 fold", "value": 70, "country": "IN"}
+{"_ingested_at": "2026-09-10T06:08:40.627584+00:00", "seed": "iPhone Fold", "geo": "IN", "rising_query": "apple iphone 18 pro max", "value": 70, "country": "IN"}
+{"_ingested_at": "2026-09-10T06:08:40.627587+00:00", "seed": "iPhone Fold", "geo": "IN", "rising_query": "iphone 18 pro", "value": 70, "country": "IN"}
+{"_ingested_at": "2026-09-10T06:08:40.627589+00:00", "seed": "iPhone Fold", "geo": "IN", "rising_query": "iphone 18 pro max", "value": 50, "country": "IN"}
+{"_ingested_at": "2026-09-10T06:08:40.627591+00:00", "seed": "iPhone Fold", "geo": "IN", "rising_query": "iphone fold price", "value": 50, "country": "IN"}
+{"_ingested_at": "2026-09-10T06:08:40.627592+00:00", "seed": "iPhone Ultra", "geo": "IN", "rising_query": "iphone duo", "value": 92050, "country": "IN"}
+{"_ingested_at": "2026-09-10T06:08:40.627594+00:00", "seed": "iPhone Ultra", "geo": "IN", "rising_query": "iphone 18 ultra", "value": 150, "country": "IN"}
+{"_ingested_at": "2026-09-10T06:08:40.627596+00:00", "seed": "iPhone Ultra", "geo": "IN", "rising_query": "iphone 18", "value": 140, "country": "IN"}
+{"_ingested_at": "2026-09-10T06:08:40.627597+00:00", "seed": "iPhone Ultra", "geo": "IN", "rising_query": "iphone 18 pro", "value": 80, "country": "IN"}
+{"_ingested_at": "2026-09-10T06:08:40.627599+00:00", "seed": "iPhone Ultra", "geo": "IN", "rising_query": "iphone 18 pro max", "value": 70, "country": "IN"}
+{"_ingested_at": "2026-09-10T06:08:40.627600+00:00", "seed": "iPhone Ultra", "geo": "IN", "rising_query": "iphone 18 ultra fold", "value": 60, "country": "IN"}
+{"_ingested_at": "2026-09-10T06:08:40.627601+00:00", "seed": "foldable iPhone", "geo": "IN", "rising_query": "iphone 18 pro foldable", "value": 80, "country": "IN"}
+{"_ingested_at": "2026-09-10T06:08:40.627602+00:00", "seed": "foldable iPhone", "geo": "IN", "rising_query": "iphone 18 pro", "value": 70, "country": "IN"}
+{"_ingested_at": "2026-09-10T06:08:40.627603+00:00", "seed": "foldable iPhone", "geo": "IN", "rising_query": "iphone 18", "value": 60, "country": "IN"}
+{"_ingested_at": "2026-09-10T06:08:40.627605+00:00", "seed": "iPhone 18 Pro", "geo": "IN", "rising_query": "iphone duo", "value": 151600, "country": "IN"}
+{"_ingested_at": "2026-09-10T06:08:40.627606+00:00", "seed": "iPhone 18 Pro", "geo": "IN", "rising_query": "nepal floods flash floods", "value": 15500, "country": "IN"}
+{"_ingested_at": "2026-09-10T06:08:40.627607+00:00", "seed": "iPhone 18 Pro", "geo": "IN", "rising_query": "iphone 18 price", "value": 150, "country": "IN"}
+{"_ingested_at": "2026-09-10T06:08:40.627609+00:00", "seed": "iPhone 18 Pro", "geo": "IN", "rising_query": "iphone 18 pro price", "value": 150, "country": "IN"}
+{"_ingested_at": "2026-09-10T06:08:40.627610+00:00", "seed": "iPhone 18 Pro", "geo": "IN", "rising_query": "iphone 18 pro max price", "value": 120, "country": "IN"}
+{"_ingested_at": "2026-09-10T06:08:40.627611+00:00", "seed": "iPhone 18 Pro", "geo": "IN", "rising_query": "iphone 17 pro price", "value": 110, "country": "IN"}
+{"_ingested_at": "2026-09-10T06:08:40.627612+00:00", "seed": "iPhone 18 Pro", "geo": "IN", "rising_query": "17 pro", "value": 70, "country": "IN"}
+{"_ingested_at": "2026-09-10T06:08:40.627614+00:00", "seed": "iPhone 18 Pro", "geo": "IN", "rising_query": "iphone 17 pro", "value": 70, "country": "IN"}
+{"_ingested_at": "2026-09-10T06:08:40.627615+00:00", "seed": "iPhone 18 Pro", "geo": "IN", "rising_query": "17 pro max", "value": 70, "country": "IN"}
+{"_ingested_at": "2026-09-10T06:08:40.627616+00:00", "seed": "iPhone 18 Pro", "geo": "IN", "rising_query": "iphone 17", "value": 60, "country": "IN"}
+{"_ingested_at": "2026-09-10T06:08:40.627617+00:00", "seed": "iPhone 18 Pro", "geo": "IN", "rising_query": "iphone 17 pro max", "value": 60, "country": "IN"}
+{"_ingested_at": "2026-09-10T06:08:40.627618+00:00", "seed": "iPhone 18 Pro Max", "geo": "IN", "rising_query": "iphone 17", "value": 90, "country": "IN"}
+{"_ingested_at": "2026-09-10T06:08:40.627620+00:00", "seed": "iPhone 18 Pro Max", "geo": "IN", "rising_query": "iphone 17 pro max", "value": 90, "country": "IN"}
+{"_ingested_at": "2026-09-10T06:08:40.627621+00:00", "seed": "iPhone 18 Pro Max", "geo": "IN", "rising_query": "iphone 17 pro", "value": 90, "country": "IN"}
