@@ -1439,3 +1439,13 @@
 {"_ingested_at": "2026-09-10T12:08:32.529174+00:00", "keyword": "iPhone Fold price India", "geo": "IN", "value_last": 4.3, "value_prev": 0.0, "wow_pct": null, "source": "pytrends", "country": "IN"}
 {"_ingested_at": "2026-09-10T12:08:32.529177+00:00", "keyword": "iPhone 18 Pro", "geo": "IN", "value_last": 27.7, "value_prev": 7.1, "wow_pct": 290.1, "source": "pytrends", "country": "IN"}
 {"_ingested_at": "2026-09-10T12:08:32.529180+00:00", "keyword": "iPhone 18 Pro Max", "geo": "IN", "value_last": 13.3, "value_prev": 4.3, "wow_pct": 209.3, "source": "pytrends", "country": "IN"}
+{"_ingested_at": "2026-09-10T14:06:38.898359+00:00", "keyword": "아이폰 폴드", "geo": "KR", "value_last": 26.3, "value_prev": 7.0, "wow_pct": 275.7, "source": "pytrends", "country": "KR"}
+{"_ingested_at": "2026-09-10T14:06:38.898369+00:00", "keyword": "아이폰 언트라", "geo": "KR", "value_last": 0.0, "value_prev": 0.0, "wow_pct": null, "source": "pytrends", "country": "KR"}
+{"_ingested_at": "2026-09-10T14:06:38.898374+00:00", "keyword": "아이폰 울트라", "geo": "KR", "value_last": 5.9, "value_prev": 3.1, "wow_pct": 90.3, "source": "pytrends", "country": "KR"}
+{"_ingested_at": "2026-09-10T14:06:38.898377+00:00", "keyword": "폴더블 아이폰", "geo": "KR", "value_last": 7.7, "value_prev": 2.6, "wow_pct": 196.2, "source": "pytrends", "country": "KR"}
+{"_ingested_at": "2026-09-10T14:06:38.898380+00:00", "keyword": "아이폰 폴드 갤럭시 Z폴드 비교", "geo": "KR", "value_last": 0.1, "value_prev": 0.0, "wow_pct": null, "source": "pytrends", "country": "KR"}
+{"_ingested_at": "2026-09-10T14:06:38.898384+00:00", "keyword": "아이폰 폴드 갤럭시 폴드", "geo": "KR", "value_last": 5.6, "value_prev": 1.6, "wow_pct": 250.0, "source": "pytrends", "country": "KR"}
+{"_ingested_at": "2026-09-10T14:06:38.898387+00:00", "keyword": "아이폰 폴드 가격", "geo": "KR", "value_last": 3.7, "value_prev": 1.0, "wow_pct": 270.0, "source": "pytrends", "country": "KR"}
+{"_ingested_at": "2026-09-10T14:06:38.898391+00:00", "keyword": "아이폰 폴드 사전예약", "geo": "KR", "value_last": 0.1, "value_prev": 0.0, "wow_pct": null, "source": "pytrends", "country": "KR"}
+{"_ingested_at": "2026-09-10T14:06:38.898394+00:00", "keyword": "아이폰 18 프로", "geo": "KR", "value_last": 29.9, "value_prev": 10.3, "wow_pct": 190.3, "source": "pytrends", "country": "KR"}
+{"_ingested_at": "2026-09-10T14:06:38.898397+00:00", "keyword": "아이폰 18 프로맥스", "geo": "KR", "value_last": 4.4, "value_prev": 1.1, "wow_pct": 300.0, "source": "pytrends", "country": "KR"}
