@@ -768,3 +768,38 @@
 {"_ingested_at": "2026-09-10T01:06:04.754726+00:00", "keyword": "iPhone Fold price India", "geo": "IN", "value_last": 5.1, "value_prev": 0.4, "wow_pct": 1175.0, "source": "pytrends", "country": "IN"}
 {"_ingested_at": "2026-09-10T01:06:04.754728+00:00", "keyword": "iPhone 18 Pro", "geo": "IN", "value_last": 26.6, "value_prev": 6.7, "wow_pct": 297.0, "source": "pytrends", "country": "IN"}
 {"_ingested_at": "2026-09-10T01:06:04.754731+00:00", "keyword": "iPhone 18 Pro Max", "geo": "IN", "value_last": 13.9, "value_prev": 4.1, "wow_pct": 239.0, "source": "pytrends", "country": "IN"}
+{"_ingested_at": "2026-09-10T01:09:32.855638+00:00", "keyword": "iPhone Fold", "geo": "US", "value_last": 33.6, "value_prev": 8.4, "wow_pct": 300.0, "source": "pytrends", "country": "US"}
+{"_ingested_at": "2026-09-10T01:09:32.855671+00:00", "keyword": "iPhone Ultra", "geo": "US", "value_last": 24.3, "value_prev": 13.4, "wow_pct": 81.3, "source": "pytrends", "country": "US"}
+{"_ingested_at": "2026-09-10T01:09:32.855677+00:00", "keyword": "iPhone 18 Fold", "geo": "US", "value_last": 6.9, "value_prev": 2.0, "wow_pct": 245.0, "source": "pytrends", "country": "US"}
+{"_ingested_at": "2026-09-10T01:09:32.855681+00:00", "keyword": "foldable iPhone", "geo": "US", "value_last": 27.7, "value_prev": 4.0, "wow_pct": 592.5, "source": "pytrends", "country": "US"}
+{"_ingested_at": "2026-09-10T01:09:32.855684+00:00", "keyword": "iPhone Fold vs Galaxy Fold", "geo": "US", "value_last": 0.4, "value_prev": 0.0, "wow_pct": null, "source": "pytrends", "country": "US"}
+{"_ingested_at": "2026-09-10T01:09:32.855689+00:00", "keyword": "iPhone Fold vs Galaxy Z Fold", "geo": "US", "value_last": 0.0, "value_prev": 0.0, "wow_pct": null, "source": "pytrends", "country": "US"}
+{"_ingested_at": "2026-09-10T01:09:32.855692+00:00", "keyword": "iPhone Fold price", "geo": "US", "value_last": 0.3, "value_prev": 0.0, "wow_pct": null, "source": "pytrends", "country": "US"}
+{"_ingested_at": "2026-09-10T01:09:32.855696+00:00", "keyword": "iPhone Fold preorder", "geo": "US", "value_last": 0.0, "value_prev": 0.0, "wow_pct": null, "source": "pytrends", "country": "US"}
+{"_ingested_at": "2026-09-10T01:09:32.855700+00:00", "keyword": "iPhone 18 Pro", "geo": "US", "value_last": 33.3, "value_prev": 9.1, "wow_pct": 265.9, "source": "pytrends", "country": "US"}
+{"_ingested_at": "2026-09-10T01:09:32.855703+00:00", "keyword": "iPhone 18 Pro Max", "geo": "US", "value_last": 22.1, "value_prev": 6.4, "wow_pct": 245.3, "source": "pytrends", "country": "US"}
+{"_ingested_at": "2026-09-10T01:09:32.855707+00:00", "keyword": "아이폰 폴드", "geo": "KR", "value_last": 19.6, "value_prev": 3.1, "wow_pct": 532.3, "source": "pytrends", "country": "KR"}
+{"_ingested_at": "2026-09-10T01:09:32.855712+00:00", "keyword": "아이폰 언트라", "geo": "KR", "value_last": 0.0, "value_prev": 0.0, "wow_pct": null, "source": "pytrends", "country": "KR"}
+{"_ingested_at": "2026-09-10T01:09:32.855715+00:00", "keyword": "아이폰 울트라", "geo": "KR", "value_last": 4.3, "value_prev": 1.4, "wow_pct": 207.1, "source": "pytrends", "country": "KR"}
+{"_ingested_at": "2026-09-10T01:09:32.855719+00:00", "keyword": "폴더블 아이폰", "geo": "KR", "value_last": 6.3, "value_prev": 1.1, "wow_pct": 472.7, "source": "pytrends", "country": "KR"}
+{"_ingested_at": "2026-09-10T01:09:32.855722+00:00", "keyword": "아이폰 폴드 갤럭시 Z폴드 비교", "geo": "KR", "value_last": 0.0, "value_prev": 0.0, "wow_pct": null, "source": "pytrends", "country": "KR"}
+{"_ingested_at": "2026-09-10T01:09:32.855726+00:00", "keyword": "아이폰 폴드 갤럭시 폴드", "geo": "KR", "value_last": 5.4, "value_prev": 1.0, "wow_pct": 440.0, "source": "pytrends", "country": "KR"}
+{"_ingested_at": "2026-09-10T01:09:32.855730+00:00", "keyword": "아이폰 폴드 가격", "geo": "KR", "value_last": 3.3, "value_prev": 0.0, "wow_pct": null, "source": "pytrends", "country": "KR"}
+{"_ingested_at": "2026-09-10T01:09:32.855733+00:00", "keyword": "아이폰 폴드 사전예약", "geo": "KR", "value_last": 0.0, "value_prev": 0.0, "wow_pct": null, "source": "pytrends", "country": "KR"}
+{"_ingested_at": "2026-09-10T01:09:32.855737+00:00", "keyword": "아이폰 18 프로", "geo": "KR", "value_last": 21.4, "value_prev": 4.7, "wow_pct": 355.3, "source": "pytrends", "country": "KR"}
+{"_ingested_at": "2026-09-10T01:09:32.855741+00:00", "keyword": "아이폰 18 프로맥스", "geo": "KR", "value_last": 3.4, "value_prev": 1.0, "wow_pct": 240.0, "source": "pytrends", "country": "KR"}
+{"_ingested_at": "2026-09-10T01:09:32.855744+00:00", "keyword": "iPhone Fold", "geo": "GB", "value_last": 24.6, "value_prev": 4.6, "wow_pct": 434.8, "source": "pytrends", "country": "GB"}
+{"_ingested_at": "2026-09-10T01:09:32.855748+00:00", "keyword": "iPhone Ultra", "geo": "GB", "value_last": 22.0, "value_prev": 10.0, "wow_pct": 120.0, "source": "pytrends", "country": "GB"}
+{"_ingested_at": "2026-09-10T01:09:32.855751+00:00", "keyword": "foldable iPhone", "geo": "GB", "value_last": 14.1, "value_prev": 2.0, "wow_pct": 605.0, "source": "pytrends", "country": "GB"}
+{"_ingested_at": "2026-09-10T01:09:32.855755+00:00", "keyword": "iPhone Fold vs Galaxy Fold", "geo": "GB", "value_last": 0.0, "value_prev": 0.0, "wow_pct": null, "source": "pytrends", "country": "GB"}
+{"_ingested_at": "2026-09-10T01:09:32.855758+00:00", "keyword": "iPhone Fold price", "geo": "GB", "value_last": 5.6, "value_prev": 0.4, "wow_pct": 1300.0, "source": "pytrends", "country": "GB"}
+{"_ingested_at": "2026-09-10T01:09:32.855762+00:00", "keyword": "iPhone Fold preorder", "geo": "GB", "value_last": 0.0, "value_prev": 0.0, "wow_pct": null, "source": "pytrends", "country": "GB"}
+{"_ingested_at": "2026-09-10T01:09:32.855765+00:00", "keyword": "iPhone 18 Pro", "geo": "GB", "value_last": 22.7, "value_prev": 4.3, "wow_pct": 427.9, "source": "pytrends", "country": "GB"}
+{"_ingested_at": "2026-09-10T01:09:32.855769+00:00", "keyword": "iPhone 18 Pro Max", "geo": "GB", "value_last": 15.3, "value_prev": 2.7, "wow_pct": 466.7, "source": "pytrends", "country": "GB"}
+{"_ingested_at": "2026-09-10T01:09:32.855772+00:00", "keyword": "iPhone Fold", "geo": "IN", "value_last": 25.4, "value_prev": 5.0, "wow_pct": 408.0, "source": "pytrends", "country": "IN"}
+{"_ingested_at": "2026-09-10T01:09:32.855776+00:00", "keyword": "iPhone Ultra", "geo": "IN", "value_last": 17.4, "value_prev": 11.4, "wow_pct": 52.6, "source": "pytrends", "country": "IN"}
+{"_ingested_at": "2026-09-10T01:09:32.855779+00:00", "keyword": "foldable iPhone", "geo": "IN", "value_last": 7.3, "value_prev": 1.0, "wow_pct": 630.0, "source": "pytrends", "country": "IN"}
+{"_ingested_at": "2026-09-10T01:09:32.855782+00:00", "keyword": "iPhone Fold vs Galaxy Fold", "geo": "IN", "value_last": 0.0, "value_prev": 0.0, "wow_pct": null, "source": "pytrends", "country": "IN"}
+{"_ingested_at": "2026-09-10T01:09:32.855786+00:00", "keyword": "iPhone Fold price India", "geo": "IN", "value_last": 5.4, "value_prev": 0.9, "wow_pct": 500.0, "source": "pytrends", "country": "IN"}
+{"_ingested_at": "2026-09-10T01:09:32.855790+00:00", "keyword": "iPhone 18 Pro", "geo": "IN", "value_last": 26.1, "value_prev": 6.4, "wow_pct": 307.8, "source": "pytrends", "country": "IN"}
+{"_ingested_at": "2026-09-10T01:09:32.855793+00:00", "keyword": "iPhone 18 Pro Max", "geo": "IN", "value_last": 12.4, "value_prev": 4.0, "wow_pct": 210.0, "source": "pytrends", "country": "IN"}
